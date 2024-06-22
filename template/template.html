@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>{{ name }} | Actor's Profile</title>
+</head>
+<body>
+    <header>
+        <h1 class="section-head">Actor's Profile</h1>
+    </header>
+    <main>
+        <section id="personal-info">
+            <img src="https://static.diverseui.com/female-56.jpeg" alt="Actor's headshot" width="192" height="192">
+            <div class="card">
+                <h2 class="section-head">Personal Information</h2>
+                <p id="name">{{ name }}</p>
+                <address>
+                    <ul>
+                        <li id="address"><span class="label">Address : </span>{{ address }}</li>
+                        <li id="contact-number"><span class="label">Contact Number : </span><a href="sms:{{ contact_number }}">{{ contact_number }}</a></li>
+                        <li id="email"><span class="label">E-mail : </span><a href="mailto:{{ email }}">{{ email }}</a></li>
+                    </ul>
+                </address>
+            </div>
+        </section>
+        <div id="secondary">
+            <section>
+                <h2 class="section-head">Credits</h2>
+                <h3>Medium</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Production</th>
+                                <td>Position</td>
+                                <td>Role</td>
+                                <td>Year</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+            <section>
+                <h2 class="section-head">Trainings & Workshops</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Program</td>
+                            <td>Organizer</td>
+                            <td>Year</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Summary</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h2 class="section-head">Skills</h2>
+                <ul>
+                    <li>Dancing</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
