@@ -1,3 +1,7 @@
+from datetime import datetime
+from typing import Final
+
+
 def kebab(str: str) -> str:
     """Return a string converted to kebab case.
 
@@ -28,3 +32,16 @@ def kebab(str: str) -> str:
 
     # Merge list into a single hyphenated string
     return "-".join(words).lower()
+
+
+def generate_filename(
+    subject: str,
+    ext: str,
+    classification: str = "",
+    sep: str = "_",
+) -> str:
+    CURR_DATE: Final[str] = datetime.now().strftime("%Y%m%d")
+    filename_comps: list[str] = [kebab(subject), CURR_DATE]
+    if classification:
+        filename_comps.insert(0, kebab(classification).upper())
+    return sep.join(filename_comps) + ext
