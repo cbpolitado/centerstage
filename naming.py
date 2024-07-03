@@ -41,7 +41,10 @@ def generate_filename(
     sep: str = "_",
 ) -> str:
     CURR_DATE: Final[str] = datetime.now().strftime("%Y%m%d")
-    filename_comps: list[str] = [kebab(subject), CURR_DATE]
+    filename_comps: list[str] = [kebab(subject) or "untitled", CURR_DATE]
+    # TODO: Check for empty strings
+    # TODO: Prefix an extension with a "." if it doesn't already have one,
+    # and the extension is not an empty string
     if classification:
         filename_comps.insert(0, kebab(classification).upper())
     return sep.join(filename_comps) + ext
