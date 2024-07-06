@@ -40,6 +40,17 @@ def generate_filename(
     classification: str = "",
     sep: str = "_",
 ) -> str:
+    """Return a string concatenated from strings passed as
+    arguments to the function.
+
+    The return value is formatted in the following order
+    from left to right: uppercased version of `classification`,
+    `subject` in kebab-case excluding non-alphanumeric
+    characters, ISO 8601 date in basic format (e.g. YYYYMMDD)
+    when the file name was generated, and a dot-prefixed file
+    name extension `ext`. These arguments are delimited by
+    the string passed as `sep`.
+    """
     CURR_DATE: Final[str] = datetime.now().strftime("%Y%m%d")
     filename_comps: list[str] = [kebab(subject) or "untitled", CURR_DATE]
     # Prefix an extension with a "." if it doesn't already have one,
