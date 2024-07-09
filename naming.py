@@ -50,6 +50,21 @@ def generate_filename(
     when the file name was generated, and a dot-prefixed file
     name extension `ext`. These arguments are delimited by
     the string passed as `sep`.
+
+    :param subject: The subject, theme, or title of the file
+    :type subject: str
+    :param ext: The file extension, which may or may not be
+        prefixed with a dot
+    :type ext: str
+    :param classification: The classification under which the
+        file falls. Defaults to an empty string
+    :type classification: str, optional
+    :param sep: A character separating the file name
+        components. Defaults to an underscore
+    :type sep: str, optional
+    :return: A concatenation of strings passed as arguments
+        to the function, separated by `sep`
+    :rtype: str
     """
     CURR_DATE: Final[str] = datetime.now().strftime("%Y%m%d")
     filename_comps: list[str] = [kebab(subject) or "untitled", CURR_DATE]
